@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
-const users = require("../models/user.model");
+const users = require("../model/users.model");
 
-const login = (username, password) => {
+const loginService = (username, password) => {
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
@@ -20,4 +20,4 @@ const login = (username, password) => {
   };
 };
 
-module.exports = login;
+module.exports = loginService ;

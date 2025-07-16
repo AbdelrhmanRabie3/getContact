@@ -1,6 +1,6 @@
 const loginService = require("../services/auth.service");
 
-const login = async (req, res) => {
+const loginController = async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -22,4 +22,4 @@ const login = async (req, res) => {
     });
   }
 };
-module.exports = login;
+module.exports = loginController;
