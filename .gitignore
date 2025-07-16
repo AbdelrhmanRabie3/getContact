@@ -1,0 +1,46 @@
+# === General ===
+node_modules/
+dist/
+.env
+*.log
+
+# === Angular (Frontend) ===
+/client/.angular/cache
+/client/.angular/
+.client/
+out-tsc
+tmp
+bazel-out
+coverage/
+
+# === Build Output ===
+/client/dist
+/server/dist
+
+# === System files ===
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+npm-debug.log*
+yarn-error.log*
+libpeerconnection.log
+testem.log
+connect.lock
+
+# === Editor Config ===
+.vscode/
+.idea/
+.project
+.classpath
+*.sublime-workspace
+.settings/
+*.launch
+.c9/
+.history/
+
+# === Optional: Allow some useful vscode settings to be versioned
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
