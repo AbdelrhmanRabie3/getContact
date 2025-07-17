@@ -22,5 +22,7 @@ const contactSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  lockedBy: { type: String, default: null },
+  lockedAt: { type: Date, default: null },
 });
 module.exports = mongoose.model("Contact", contactSchema);

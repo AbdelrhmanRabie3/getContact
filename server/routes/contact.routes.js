@@ -8,5 +8,24 @@ const {
 
 router.use(authenticateJWT);
 router.get("/", contactController.getContacts);
-router.post("/", authorizeRoles("admin"), contactController.createContact);
+router.post(
+  "/",
+  authorizeRoles("admin", "user"),
+  contactController.createContact
+);
+router.put(
+  "/:id",
+  authorizeRoles("admin", "user"),
+  contactController.updateContact
+);
+router.patch(
+  "/:id/lock",
+  authorizeRoles("admin", "user"),
+  contactController.lockContact
+);
+router.patch(
+  "/:id/unlock",
+  authorizeRoles("admin", "user"),
+  contactController.unlockContact
+);
 module.exports = router;
