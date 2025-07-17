@@ -70,10 +70,21 @@ const unlockContact = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+
+const deleteContact = async (req, res) => {
+  try {
+    const deleted = await ContactService.deleteContact(req.params.id);
+    if (!deleted) return res.status(404).json({ message: "Contact not found" });
+    res.json({ message: "Contact deleted" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 module.exports = {
   createContact,
   getContacts,
   updateContact,
   lockContact,
   unlockContact,
+  deleteContact,
 };

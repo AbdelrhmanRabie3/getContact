@@ -28,4 +28,5 @@ router.patch(
   authorizeRoles("admin", "user"),
   contactController.unlockContact
 );
+router.delete("/:id", authorizeRoles("admin"), contactController.deleteContact);
 module.exports = router;

@@ -55,10 +55,15 @@ const unlockContact = async (id, io) => {
   return contact;
 };
 
+const deleteContact = async (id) => {
+  const contact = await Contact.findByIdAndDelete(id);
+  return contact;
+};
 module.exports = {
   createContact,
   getContacts,
   lockContact,
   updateContact,
   unlockContact,
+  deleteContact
 };
