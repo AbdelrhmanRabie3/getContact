@@ -7,6 +7,12 @@ const contactSchema = new mongoose.Schema({
   Phone: {
     type: String,
     required: true,
+    validate: {
+      validator: function (v) {
+        return /^\+?[0-9\-\s]{7,15}$/.test(v);
+      },
+      message: (props) => `${props.value} is not a valid phone number!`,
+    },
   },
   Address: {
     type: String,
@@ -15,11 +21,6 @@ const contactSchema = new mongoose.Schema({
   Notes: {
     type: String,
     required: false,
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: true,
   },
 });
 module.exports = mongoose.model("Contact", contactSchema);
