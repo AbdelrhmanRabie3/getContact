@@ -7,5 +7,6 @@ const {
 } = require("../middlewares/auth.middleware");
 
 router.use(authenticateJWT);
+router.get("/", contactController.getContacts);
 router.post("/", authorizeRoles("admin"), contactController.createContact);
 module.exports = router;
