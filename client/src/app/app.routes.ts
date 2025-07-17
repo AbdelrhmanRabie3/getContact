@@ -3,7 +3,7 @@ import { NotfoundComponent } from "./notfound/notfound.component";
 import { HomeComponent } from "./home/home.component";
 
 export const routes: Routes = [
-  { path: "", redirectTo: "/login", pathMatch: "full" },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "login",
     loadComponent: () =>
